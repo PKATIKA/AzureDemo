@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .form-field-visco {
+            visibility: collapse;
+        }
+
+        .form-field-opacity {
+            opacity: 0;
+        }
+
+        .form-field-abspo {
+            position: absolute;
+            top: -9999px;
+        }
+
+        .form-field-vishi {
+            visibility: hidden;
+        }
+
+        .form-field-negz{
+            z-index: -1;
+              position: absolute;
+              text-indent: -999px;
+        }
+        .hide{
+            display: none;
+        }
+
+        div{
+            display: block !important;
+        }
+
+    </style>
+    
+</head>
+
+
+<form id="contact-form" action="!corporate_mule_url" enctype='multipart/form-data' method="post"
+    class="contact-form-2020">
+    
+    <label for="subject">!CEC_Subject__c<span class="required"> *</span></label>
+    <p id="subject-desc">!CEC_Please_Select_Message_Subject__c</p>
+    <p id="subject-additional-desc">!CEC_Your_Messages_Relates_To__c</p>
+        <select required="" name="subjectCode" id="subjectCode" aria-describedby="subject-desc subject-additional-desc" class="contact-form__subject-list subjectCode_CEC" data-subjects="">
+            <option value="" selected="" disabled="">!CEC_Select__c</option>
+            !CEC_MESSAGE_TYPE
+        </select>
+        <div class="contact-form__subject-list__moreinfo hide" data-moreinfo="">
+        </div>
+        <label for="brandCode" data-brands="" data-brandsCEC="" class="hide">!cec_select_a_brand</label>
+        <p id="brand-desc" data-brands="" data-brandsCEC="" class="hide">!CEC_Enter_2_letters_for_Brand_skip__c</p>
+        <select name="brandCode" id="brandCode" aria-describedby="brand-desc" class="contact-form__subject-list hide" data-brands="" data-brandsCEC="">
+            <option value="" selected="selected">!CEC_Select__c</option>
+            !CEC_BRAND_LIST
+        </select>
+        <input maxlength="120" id="country" name="country" tabindex="-1" readonly type="hidden" value="!CEC_Country_c">
+        <input aria-hidden="true" id="language" maxlength="120" name="language" tabindex="-1" readonly type="hidden"
+            value="!CEC_Language_c">
+        <input aria-hidden="true" id="successRedirectUrl" maxlength="120" name="successRedirectUrl" tabindex="-1"
+            readonly type="hidden" value="!CEC_Redirect_URL__c">
+        <input aria-hidden="true" id="websiteUrl" maxlength="120" name="websiteUrl" tabindex="-1" readonly type="hidden"
+            value="/contact/contact-form-2020/">
+        <input aria-hidden="true" id="unileverCorporateCode" maxlength="120" name="unileverCorporateCode" tabindex="-1"
+            readonly type="hidden" value="!CEC_Brand_Id_c">
+    
+
+    <fieldset>
+        <legend><span>!CEC_Message_Details__c</span></legend>
+        <p>!CEC_Please_Enter_Your_Message_Details__c</p>
+        <div class="form-field">
+            <label for="firstName">
+                !CEC_First_Name__c
+                <span class="required"> *</span>
+            </label>
+            <input id="firstName" maxlength="120" name="firstName" type="text" value=""
+                data-error="This is required" autocomplete="given-name" required>
+        </div>
+
+        <div class="form-field-visco form-field-zip form-field-hidden" aria-hidden="true">
+            <label for="houseResponse">
+                House No.
+                <span class="required">*</span>
+            </label>
+            <input autocomplete="autocomplete_field_2345" id="houseResponse" maxlength="120" name="houseResponse"
+                tabindex="-1" type="text" value="">
+        </div>
+
+        <div class="form-field">
+            <label for="familyName">
+                !CEC_Last_Name__c
+                <span class="required">*</span>
+            </label>
+            <input id="familyName" maxlength="120" name="familyName" type="text" value="" autocomplete="family-name" required>
+        </div>
+
+        <div class="form-field-negz form-field-zip form-field-hidden" aria-hidden="true">
+            <label for="cityResponse">
+                Town/City
+                <span class="required">*</span>
+            </label>
+            <input autocomplete="autocomplete_field_2346" id="cityResponse" maxlength="120" name="cityResponse"
+                tabindex="-1" type="text" value="">
+        </div>
+
+        <div class="form-field">
+            <label for="email">
+                !CEC_Email_Address__c
+                <span class="required">*</span>
+            </label>
+            <input id="email" maxlength="120" name="email" type="email" value="" autocomplete="email" title="Please type a valid E-mail address" required>
+        </div>
+        
+        <div class="form-field-abspo form-field-zip form-field-hidden" aria-hidden="true">
+            <label for="queryResponse">
+                Query
+                <span class="required">*</span>
+            </label>
+            <input autocomplete="autocomplete_field_2347" id="queryResponse" maxlength="120" name="queryResponse"
+                tabindex="-1" type="text" value="">
+        </div>
+
+        <div>
+            <label for="messageText">
+                !CEC_Your_Message__c<span class="required"> *</span> </label>
+
+            <textarea cols="40" id="messageText" maxlength="2000" name="messageText"
+                rows="8" autocomplete="off" required></textarea>
+        </div>
+
+        <div class="form-field-vishi form-field-zip form-field-hidden">
+            <label for="websiteResponse">
+                Website
+                <span class="required">*</span>
+            </label>
+            <input autocomplete="autocomplete_field_2348" id="websiteResponse" maxlength="120" name="websiteResponse"
+                tabindex="-1" type="text" value="">
+        </div>
+
+        <div class="form-field-visco form-field-zip form-field-hidden" aria-hidden="true">
+            <label for="companyResponse">
+                Company
+                <span class="required">*</span>
+            </label>
+            <input autocomplete="autocomplete_field_2349" id="companyResponse" maxlength="120" name="companyResponse"
+                tabindex="-1" type="text" value="" />
+        </div>
+
+        <div>
+            <p class="label">
+                !CEC_Confirm_Your_Age__c <span class="required">*</span> </p>
+            <label>
+                <input id="legalAgeConfirmation" name="legalAgeConfirmation" type="checkbox"
+                    value="true" required>
+                !CEC_Age_Check__c
+                <a href="!CEC_Terms_and_Usage_c" title="!cec_terms_of_use__c">!cec_terms_of_use__c</a>
+            </label>
+        </div>
+        <div class="PLDataConsent">
+            <label>
+                <input required="required" id="PLDataConsent" name="PLDataConsent" type="checkbox"
+                    value="true">
+                    !CEC_Additional_Disclaimer__c <span class="required">*</span>
+            </label>
+        </div>
+        <a name="formAnchor"></a>
+        <div class="cta-link">
+            <input type="submit" value="!CEC_Submit__c" id="btnSubmit"></input>
+        </div>
+    </fieldset>
+    <script type="text/javascript" src="https://d1a1ax4tcp3m3j.cloudfront.net/production/corporate/main.min.js" async></script>
+</form>
+
+</html>
